@@ -46,13 +46,12 @@ The dataset contains 41,188 records with 20 attributes and one outcome variable 
 - There are no duplicates.
 - Missing values are observed in several attributes. 26% of the records have at least one missing value in the record. In most cases, missing values are indicated by the term "unknown" as the value in the database.
 - One data integrity issue was discovered and these 4,110 (10% of total) records are excluded from the dataset to ensure the reliability of the analysis.
-<div align='center'>
-<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/row_missing_val_density.png">
-</div>
 
 #### Missing values treatments
 In most cases, missing values are indicated by the term "unknown" as the value in the database. Records with missing values are kept. The term 'unknown' is preserved as a categorical value to build the models so that models can process these incomplete records and predict their likely outcomes.
-
+<p align='center'>
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/row_missing_val_density.png">
+</p>
 ## Methodology
 Four predictive classification models are constructed, fine-tuned, and evaluated, each with distinct approaches: one approximates by considering the nearest data points, another makes rule-based decisions, a third separates classes ('yes'/'no') with a straight line (or segments), and the last one uses complex boundaries to distinguish classes.
 
@@ -87,24 +86,22 @@ Decision Tree Classifier model is more confident in predicting positive outcomes
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/logreg_pred_proba.png">
 </div>
 <p></p>
-The best model, Support Vector Machine, have the best balance of predicting both positive and negative outcomes in high confidence.
-<div align="center">
+The best model, Support Vector Machine, has the best balance of predicting both positive and negative outcomes in high confidence.
+<p align="center">
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_pred_proba.png">
-</div>
-
+</p>
 ## Actionable Recommendations
 **Prioritize High-Probability Customers:** Focus initial efforts on the subset of customers identified by the models as having the highest likelihood of subscribing to the Term Deposit. This approach ensures the efficient allocation of limited resources.
-<div align="center">
+<p align="center">
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_predictions.png">
-</div>
+</p>
 
 **Leverage Negative Outcomes for Improving the Models:** Actively incorporating the results of negative outcomes back into the models can provide valuable learning opportunities. This feedback loop can help refine the models, making them more robust and accurate over time.
 
 **Data Collection:** Efforts should be made to collect more high quality data, especially from interactions resulting in negative outcomes. This additional data can help address the current imbalance between positive and negative outcomes in the dataset, potentially leading to better model performance. It would be beneficial to investigate the root causes of the data integrity issue uncovered in this analysis to prevent similar problems in future data collection efforts. 
-<div align='center'>
+<p align='center'>
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/missing_value_pct_col.png">
-</div>
-
+</p>
 **Continuous Model Evaluation:** Regularly re-evaluate the models with updates to the data to ensure they remain relevant and effective over time. This practice can help identify when a model may need adjustments or replacement due to changing market conditions or customer behaviors.
 
 **Experimentation and Adaptation:** Consider running small-scale experiments with different approaches based on the models' insights. For example, testing different contact strategies based on the day of the week or scaling up the campaign when the interest rate and CPI are more favorable for customers could yield valuable insights and further optimize the campaign's effectiveness.
