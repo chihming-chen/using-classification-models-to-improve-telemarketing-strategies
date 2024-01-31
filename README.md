@@ -104,6 +104,7 @@ The best model, Support Vector Machine, has the best balance of predicting both 
 <p align='center'>
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/missing_value_pct_col.png">
 </p>
+
 **Continuous Model Evaluation:** Regularly re-evaluate the models with updates to the data to ensure they remain relevant and effective over time. This practice can help identify when a model may need adjustments or replacement due to changing market conditions or customer behaviors.
 
 **Experimentation and Adaptation:** Consider running small-scale experiments with different approaches based on the models' insights. For example, testing different contact strategies based on the day of the week or scaling up the campaign when the interest rate and CPI are more favorable for customers could yield valuable insights and further optimize the campaign's effectiveness.
