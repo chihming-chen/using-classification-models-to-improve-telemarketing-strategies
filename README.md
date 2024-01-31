@@ -52,6 +52,7 @@ In most cases, missing values are indicated by the term "unknown" as the value i
 <p align='center'>
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/row_missing_val_density.png">
 </p>
+
 ## Methodology
 Four predictive classification models are constructed, fine-tuned, and evaluated, each with distinct approaches: one approximates by considering the nearest data points, another makes rule-based decisions, a third separates classes ('yes'/'no') with a straight line (or segments), and the last one uses complex boundaries to distinguish classes.
 
