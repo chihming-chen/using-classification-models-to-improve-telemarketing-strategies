@@ -1,15 +1,13 @@
 # Using Classification Models to Improve Telemarketing Strategies
 
 ## Business Context
-A Portuguese banking institution was conducting a telemarketing campaign to solicit new business for its Term Deposit products. The institution has compiled over 40,000 records encompassing a wide array of attributes, including demographic information, details of previous customer interactions, and macroeconomic indicators. 
+A Portuguese banking institution was conducting a telemarketing campaign to solicit new business for its Term Deposit products. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required.  
 
 ## Research Objectives
-This exploratory data analysis and research aims to leverage the information to improve the bank's telemarketing strategies for promoting Term Deposit products.
+The institution compiled over 40,000 records encompassing a wide array of attributes, including demographic information, details of previous customer interactions, and macroeconomic indicators. This exploratory data analysis and research aims to leverage the information to improve the bank's telemarketing strategies for promoting Term Deposit products.
 
-## The Data
-The data is obtained from the work of Moro, S., Rita, P., and Cortez, P. (2012). Bank Marketing. UCI Machine Learning Repository. [https://doi.org/10.24432/C5K306](https://doi.org/10.24432/C5K306). "The data is related to direct marketing campaigns of a Portuguese banking institution. 
-
-The data encompasses a wide array of attributes, including demographic information, details of previous interactions, and macroeconomic indicators. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required. The analysis aims to predict customer responses to the campaign and thereby refine the bank's approach to maximize positive outcomes.
+## Data Source
+The data is obtained from the work of Moro, S., Rita, P., and Cortez, P. (2012). Bank Marketing. UCI Machine Learning Repository. [https://doi.org/10.24432/C5K306](https://doi.org/10.24432/C5K306). "The data is related to direct marketing campaigns of a Portuguese banking institution." 
 
 ### Data Dictionary
 #### Bank client data:
@@ -40,7 +38,7 @@ The data encompasses a wide array of attributes, including demographic informati
 - `euribor3m`: EURIBOR 3 month rate - daily indicator (numeric)
 - `nr.employed`: number of employees - quarterly indicator (numeric)
 
-#### Output variable (desired target):
+#### Output variable (desired target): `y` ("yes", "no")
 
 ## Exploratory Data Analysis
 ### Data Quality and Missing Value Treatments:
