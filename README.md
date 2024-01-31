@@ -69,7 +69,11 @@ Although the two models share almost the same set of leading factors, the Logist
 
 ## Actionable Recommendations
 **Prioritize High-Probability Customers:** Focus initial efforts on the subset of customers identified by the models as having the highest likelihood of subscribing to the Term Deposit. This approach ensures the efficient allocation of limited resources.
-**Leverage Negative Outcomes for Learning:** Actively incorporating the results of negative outcomes back into the models can provide valuable learning opportunities. This feedback loop can help refine the models, making them more robust and accurate over time.
+
+**Leverage Negative Outcomes for Improving the Models:** Actively incorporating the results of negative outcomes back into the models can provide valuable learning opportunities. This feedback loop can help refine the models, making them more robust and accurate over time.
+
 **Data Collection:** Efforts should be made to collect more data, especially from interactions resulting in negative outcomes. This additional data can help address the current imbalance between positive and negative outcomes in the dataset, potentially leading to better model performance. It would be beneficial to investigate the root causes of the data integrity issue uncovered in this analysis to prevent similar problems in future data collection efforts.
+
 **Continuous Model Evaluation:** Regularly re-evaluate the models with updates to the data to ensure they remain relevant and effective over time. This practice can help identify when a model may need adjustments or replacement due to changing market conditions or customer behaviors.
+
 **Experimentation and Adaptation:** Consider running small-scale experiments with different approaches based on the models' insights. For example, testing different contact strategies based on the day of the week or scaling up the campaign when the interest rate and CPI are more favorable for customers could yield valuable insights and further optimize the campaign's effectiveness.
