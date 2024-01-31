@@ -95,7 +95,7 @@ Although the two models share almost the same set of leading factors, the Logist
 
 **Leverage Negative Outcomes for Improving the Models:** Actively incorporating the results of negative outcomes back into the models can provide valuable learning opportunities. This feedback loop can help refine the models, making them more robust and accurate over time.
 
-**Data Collection:** Efforts should be made to collect more data, especially from interactions resulting in negative outcomes. This additional data can help address the current imbalance between positive and negative outcomes in the dataset, potentially leading to better model performance. It would be beneficial to investigate the root causes of the data integrity issue uncovered in this analysis to prevent similar problems in future data collection efforts.
+**Data Collection:** Efforts should be made to collect more high quality data, especially from interactions resulting in negative outcomes. This additional data can help address the current imbalance between positive and negative outcomes in the dataset, potentially leading to better model performance. It would be beneficial to investigate the root causes of the data integrity issue uncovered in this analysis to prevent similar problems in future data collection efforts. 
 <div align='center'>
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/missing_value_pct_col.png">
 </div>
