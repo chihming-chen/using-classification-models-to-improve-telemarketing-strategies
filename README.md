@@ -90,6 +90,7 @@ The best model, Support Vector Machine, has the best balance of predicting both 
 <p align="center">
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_pred_proba.png">
 </p>
+
 ## Actionable Recommendations
 **Prioritize High-Probability Customers:** Focus initial efforts on the subset of customers identified by the models as having the highest likelihood of subscribing to the Term Deposit. This approach ensures the efficient allocation of limited resources.
 <p align="center">
