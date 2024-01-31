@@ -81,17 +81,22 @@ Although the two models share almost the same set of leading factors, the Logist
 <div align="center">
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/tree_pred_proba.png">
 </div>
+Decision Tree Classifier model is more confident in predicting positive outcomes than the Logistic Regression Classifier model shown below.
 <p></p>
 <div align="center">
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/logreg_pred_proba.png">
 </div>
 <p></p>
+The best model, Support Vector Machine, have the best balance of predicting both positive and negative outcomes in high confidence.
 <div align="center">
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_pred_proba.png">
 </div>
 
 ## Actionable Recommendations
 **Prioritize High-Probability Customers:** Focus initial efforts on the subset of customers identified by the models as having the highest likelihood of subscribing to the Term Deposit. This approach ensures the efficient allocation of limited resources.
+<div align="center">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_predictions.png">
+</div>
 
 **Leverage Negative Outcomes for Improving the Models:** Actively incorporating the results of negative outcomes back into the models can provide valuable learning opportunities. This feedback loop can help refine the models, making them more robust and accurate over time.
 
