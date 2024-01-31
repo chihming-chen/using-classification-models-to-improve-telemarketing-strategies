@@ -44,8 +44,11 @@ The data is obtained from the work of Moro, S., Rita, P., and Cortez, P. (2012).
 ### Data Quality and Missing Value Treatments:
 The dataset contains 41,188 records with 20 attributes and one outcome variable - whether a customer subscribes to a term deposit product. The data quality is generally good with some issues. Here are the highlights:
 - There are no duplicates.
-- Missing values are observed in several attributes. Over 25% of the records have at least one missing value in the record. In most cases, missing values are indicated by the term "unknown" as the value in the database.
+- Missing values are observed in several attributes. 26% of the records have at least one missing value in the record. In most cases, missing values are indicated by the term "unknown" as the value in the database.
 - One data integrity issue was discovered and these 4,110 (10% of total) records are excluded from the dataset to ensure the reliability of the analysis.
+<div align='center'>
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/row_missing_val_density.png">
+</div>
 
 #### Missing values treatments
 In most cases, missing values are indicated by the term "unknown" as the value in the database. Records with missing values are kept. The term 'unknown' is preserved as a categorical value to build the models so that models can process these incomplete records and predict their likely outcomes.
@@ -57,13 +60,35 @@ Since the main objective is to use the records of the customers who have been co
 
 ## Model Selection and Performance
 Three of the models have the best and similar accuracy scores of 71% to 72%. They differ slightly in making false positive or false negative classifications on a testing dataset with 515 records. The similarity in accuracy scores among the top three models suggests that the problem is complex, and no single model vastly outperforms the others. The Support Vector Machine model that uses complex boundaries to delineate classes has the best ROC curve and a slight edge over the others with an AUC = 0.76. An AUC of 0.5 suggests no discrimination (i.e., the model has no capacity to distinguish between the positive and negative classes), whereas an AUC of 1.0 suggests perfect classification.
+<div align="center">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/roc_auc.png">
+</div>
+(Please see Supplemental Information on why the KNN model with the best AUC=1 is not considered as the best model.)
 
 ## Factors Affecting the Telemarketing Campaign Outcome
 The two close runner-up models provide insights on what factors are most likely to affect the outcome of a call to a customer.
 
 The **Decision Tree Classifier** that uses successive binary rules to make decisions indicates the 3-month Euro Interbank Offered Rate (EURIBOR), Day of Week, Month, Consumer Price Index (CPI), and the number of calls, in the order of importance, are the leading factors affecting the outcome. The **Logistic Regression Classifier** that uses straight line segments to make classifications identifies the EURIBOR, Day of Week (where Thursday is the most favorable and Monday is the most unfavorable), the CPI, previous campaign outcome, and number of calls are the key factors affecting the outcome.
+<div align="center">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/decision_tree_cum_importance.png">
+</div>
+<p></p>
+<div align="center">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/feat_importance_logistic_reg.png">
+</div>
 
 Although the two models share almost the same set of leading factors, the Logistic Regression Model is more confident in making negative outcome predictions than the Decision Tree Classifier. The best Support Vector Machine Classifier model classifies both the positive and negative classes with higher probabilities than the two runner-up models.
+<div align="center">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/tree_pred_proba.png">
+</div>
+<p></p>
+<div align="center">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/logreg_pred_proba.png">
+</div>
+<p></p>
+<div align="center">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_pred_proba.png">
+</div>
 
 ## Actionable Recommendations
 **Prioritize High-Probability Customers:** Focus initial efforts on the subset of customers identified by the models as having the highest likelihood of subscribing to the Term Deposit. This approach ensures the efficient allocation of limited resources.
@@ -71,7 +96,11 @@ Although the two models share almost the same set of leading factors, the Logist
 **Leverage Negative Outcomes for Improving the Models:** Actively incorporating the results of negative outcomes back into the models can provide valuable learning opportunities. This feedback loop can help refine the models, making them more robust and accurate over time.
 
 **Data Collection:** Efforts should be made to collect more data, especially from interactions resulting in negative outcomes. This additional data can help address the current imbalance between positive and negative outcomes in the dataset, potentially leading to better model performance. It would be beneficial to investigate the root causes of the data integrity issue uncovered in this analysis to prevent similar problems in future data collection efforts.
+<div align='center'>
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/missing_value_pct_col.png">
+</div>
 
 **Continuous Model Evaluation:** Regularly re-evaluate the models with updates to the data to ensure they remain relevant and effective over time. This practice can help identify when a model may need adjustments or replacement due to changing market conditions or customer behaviors.
 
 **Experimentation and Adaptation:** Consider running small-scale experiments with different approaches based on the models' insights. For example, testing different contact strategies based on the day of the week or scaling up the campaign when the interest rate and CPI are more favorable for customers could yield valuable insights and further optimize the campaign's effectiveness.
+
