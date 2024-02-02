@@ -114,14 +114,27 @@ The best model, Support Vector Machine Classifier, has the best balance of predi
 ### Data Integrity Issue:
 - If a customer has never been contacted by telemarketing in the past, `pdays` should be `999` and `poutcome` should be `'nonexistent'`, and vice versa. However, 4,110 violations of this integrity rule are observed. These records are excluded from the analysis.
 
+## Imbalanced Classes
+The target classes are imbalanced in the training dataset - 64% 'yes' and 36% 'no.
+
 ### Feature Engineering and Selection
 - The dataset contains 10 numeric features, 10 categorical features, and one binary target variable. Missing values in all categorical features are filled with the term `'unknown'`. All categorical features are one-hot encoded. However, prior to one-hot encoding, LightGBM, Microsoft’s Gradient Boosting Machine implementation, is used as a feature selection tool to filter out the least important categorical features.
-<p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/gbm_cumulative_gain_by_features.png" width=600></p>
+<p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/gbm_feature_selection.png" width=600></p>
 
 ### Variable Correlations
 - Strong correlations among a set of features are identified, and two of the features are manually dropped to break the strong correlations for better interpretability of the models.
 <p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/heatmap_correlations.png" width=600></p>
  
 ### Performance Metrics
-- Although the K-nearest Neighbors Classifier, with an accuracy rate of 99% and AUC = 1, it is not considered the best model because both the postive and negative predictions have low probabilities, lower than the baseline probability, as shown below.
+
+| Classifier			      | Train score	| Test score	| Fit time	| Avg. evaluation time |
+|--------------------|-------------|------------|----------|----------------------|
+| Dummy | 0.638679 | 0.637363	| 1.644101 | 1.644101 |
+| KNN | 0.994340	| 0.995604 | 1.906670	| 0.045397 |
+| Decision Tree | 0.716981 | 0.718681 | 13.134658 | 0.008108 |
+| Logistic Regression	| 0.684906	| 0.701099 | 0.157029 | 0.019629 |
+| SVC | 0.717925 | 0.705495 | 25.969553 | 0.180344 |
+
+### K-nearest Neighbors Classifier
+- Although the K-nearest Neighbors Classifier model has an accuracy rate of 99% and AUC = 1, it is not considered the best model because both the postive and negative predictions have low probabilities, lower than the baseline probability, as shown below.
 <p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/knn_pred_proba.png" width=600></p>
