@@ -61,7 +61,7 @@ Since the main objective is to use the records of the customers who have been co
 ## Model Selection and Performance
 Three of the models have the best and similar accuracy scores of 71% to 72%. They differ slightly in making false positive or false negative classifications on a testing dataset with 515 records. The similarity in accuracy scores among the top three models suggests that the problem is complex, and no single model vastly outperforms the others. The Support Vector Machine model that uses complex boundaries to delineate classes has the best ROC curve and a slight edge over the others with an AUC = 0.76. An AUC of 0.5 suggests no discrimination (i.e., the model has no capacity to distinguish between the positive and negative classes), whereas an AUC of 1.0 suggests perfect classification.
 <div align="center">
-<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/roc_auc.png">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/roc_auc.png" width=500>
 </div>
 (Please see Supplemental Information on why the KNN model with the best AUC=1 is not considered as the best model.)
 
@@ -70,26 +70,22 @@ The two close runner-up models provide insights on what factors are most likely 
 
 The **Decision Tree Classifier** that uses successive binary rules to make decisions indicates the 3-month Euro Interbank Offered Rate (EURIBOR), Day of Week, Month, Consumer Price Index (CPI), and the number of calls, in the order of importance, are the leading factors affecting the outcome. The **Logistic Regression Classifier** that uses straight line segments to make classifications identifies the EURIBOR, Day of Week (where Thursday is the most favorable and Monday is the most unfavorable), the CPI, previous campaign outcome, and number of calls are the key factors affecting the outcome.
 <div align="center">
-<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/decision_tree_cum_importance.png">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/decision_tree_cum_importance.png" width=600>
 </div>
 <p></p>
 <div align="center">
-<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/feat_importance_logistic_reg.png">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/feat_importance_logistic_reg.png" width=600>
 </div>
 
-Although the two models share almost the same set of leading factors, the Logistic Regression Model is more confident in making negative outcome predictions than the Decision Tree Classifier. The best Support Vector Machine Classifier model classifies both the positive and negative classes with higher probabilities than the two runner-up models.
+Although the two models share almost the same set of leading factors, the Decision Tree Classifier model is more confident in predicting positive outcomes than the Logistic Regression Classifier model whereas the Logistic Regression Model is more confident in making negative outcome predictions. 
 <div align="center">
-<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/tree_pred_proba.png">
-</div>
-Decision Tree Classifier model is more confident in predicting positive outcomes than the Logistic Regression Classifier model shown below.
-<p></p>
-<div align="center">
-<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/logreg_pred_proba.png">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/tree_pred_proba.png" width=400>
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/logreg_pred_proba.png" width=400>
 </div>
 <p></p>
 The best model, Support Vector Machine Classifier, has the best balance of predicting both positive and negative outcomes in high confidence as shown below.
 <p align="center">
-<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_pred_proba.png">
+<img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_pred_proba.png" width=500>
 </p>
 
 ## Actionable Recommendations
