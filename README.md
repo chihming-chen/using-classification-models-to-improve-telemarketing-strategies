@@ -87,13 +87,13 @@ Decision Tree Classifier model is more confident in predicting positive outcomes
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/logreg_pred_proba.png">
 </div>
 <p></p>
-The best model, Support Vector Machine, has the best balance of predicting both positive and negative outcomes in high confidence.
+The best model, Support Vector Machine Classifier, has the best balance of predicting both positive and negative outcomes in high confidence as shown below.
 <p align="center">
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_pred_proba.png">
 </p>
 
 ## Actionable Recommendations
-**Prioritize High-Probability Customers:** Focus initial efforts on the subset of customers identified by the models as having the highest likelihood of subscribing to the Term Deposit. This approach ensures the efficient allocation of limited resources.
+**Prioritize High-Probability Customers:** Focus initial efforts on the subset of customers identified by the models as having the highest likelihood of subscribing to the Term Deposit. This approach ensures the efficient allocation of limited resources. The model excepts a prbability-weighted forcast of 4,298 out of 35,551 (12.1%) of customers who has not been contacted to subscribe the the Term Deposit product if the telemarketing campaign continue its course.
 <p align="center">
 <img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/svc_predictions.png">
 </p>
@@ -109,3 +109,19 @@ The best model, Support Vector Machine, has the best balance of predicting both 
 
 **Experimentation and Adaptation:** Consider running small-scale experiments with different approaches based on the models' insights. For example, testing different contact strategies based on the day of the week or scaling up the campaign when the interest rate and CPI are more favorable for customers could yield valuable insights and further optimize the campaign's effectiveness.
 
+## Supplemental Information
+
+### Data Integrity Issue:
+- If a customer has never been contacted by telemarketing in the past, `pdays` should be `999` and `poutcome` should be `'nonexistent'`, and vice versa. However, 4,110 violations of this integrity rule are observed. These records are excluded from the analysis.
+
+### Feature Engineering and Selection
+- The dataset contains 10 numeric features, 10 categorical features, and one binary target variable. Missing values in all categorical features are filled with the term `'unknown'`. All categorical features are one-hot encoded. However, prior to one-hot encoding, LightGBM, Microsoft’s Gradient Boosting Machine implementation, is used as a feature selection tool to filter out the least important categorical features.
+<p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/gbm_cumulative_gain_by_features.png" width=600></p>
+
+### Variable Correlations
+- Strong correlations among a set of features are identified, and two of the features are manually dropped to break the strong correlations for better interpretability of the models.
+<p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/heatmap_correlations.png" width=600></p>
+ 
+### Performance Metrics
+- Although the K-nearest Neighbors Classifier, with an accuracy rate of 99% and AUC = 1, it is not considered the best model because both the postive and negative predictions have low probabilities, lower than the baseline probability, as shown below.
+<p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/knn_pred_proba.png" width=600></p>
