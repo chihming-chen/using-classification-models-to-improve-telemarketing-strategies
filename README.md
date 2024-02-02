@@ -114,15 +114,13 @@ The best model, Support Vector Machine Classifier, has the best balance of predi
 The target classes are imbalanced in the training dataset - 64% 'yes' and 36% 'no.
 
 ### Feature Engineering and Selection
-- The dataset contains 10 numeric features, 10 categorical features, and one binary target variable. Missing values in all categorical features are filled with the term `'unknown'`. All categorical features are one-hot encoded. However, prior to one-hot encoding, LightGBM, Microsoft’s Gradient Boosting Machine implementation, is used as a feature selection tool to filter out the least important categorical features.
+- The dataset contains 10 numeric features, 10 categorical features, and one binary target variable. Missing values in all categorical features are filled with the term `'unknown'`. All categorical features are one-hot encoded. However, prior to one-hot encoding, LightGBM, Microsoft’s Gradient Boosting Machine implementation, is used as a feature selection tool to filter out the least important categorical features - `mortgage`, `contact` (method), and `default`. In other words, the three features do not participate in the model building process.
 <p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/gbm_feature_selection.png" width=600></p>
+Although `occupation`, `loan` and `marital` make the cut of being important (categorical) features in this round of feature selection, the models determine they are not as important when combined with othe numeric features.
 
-### Variable Correlations
-- Strong correlations among a set of features are identified, and two of the features are manually dropped to break the strong correlations for better interpretability of the models.
-<p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/heatmap_correlations.png" width=600></p>
- 
 ### Performance Metrics
 
+The best Support Vector Machine Model is more than 20 times slower than the Decision Tree Classifier model which a similar accuracy scores.
 | Classifier			      | Train score	| Test score	| Fit time	| Avg. evaluation time |
 |--------------------|-------------|------------|----------|----------------------|
 | Dummy | 0.638679 | 0.637363	| 1.644101 | 1.644101 |
@@ -136,4 +134,4 @@ The target classes are imbalanced in the training dataset - 64% 'yes' and 36% 'n
 <p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/knn_pred_proba.png" width=600></p>
 
 ### Code
-[Jupyter Notebook](#https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/telemarketing.ipynb)
+[Jupyter Notebook](https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/telemarketing.ipynb)
