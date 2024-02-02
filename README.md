@@ -138,3 +138,6 @@ The target classes are imbalanced in the training dataset - 64% 'yes' and 36% 'n
 ### K-nearest Neighbors Classifier
 - Although the K-nearest Neighbors Classifier model has an accuracy rate of 99% and AUC = 1, it is not considered the best model because both the postive and negative predictions have low probabilities, lower than the baseline probability, as shown below.
 <p align="center"><img src="https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/images/knn_pred_proba.png" width=600></p>
+
+### Code
+[Jupyter Notebook](#https://github.com/chihming-chen/using-classification-models-to-improve-telemarketing-strategies/blob/main/telemarketing.ipynb)
